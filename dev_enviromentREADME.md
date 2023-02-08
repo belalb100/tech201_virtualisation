@@ -15,3 +15,5 @@ Make sure it fits specific requirements.
 3. It should match the production enviroment as closely as possible.
 4. It should be the same for everyone everywhere. Should work on every enviroment and machine.
 5. It should only support one application. (Conflict of version or programs. Keep it specific to one application. )
+
+
