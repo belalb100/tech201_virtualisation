@@ -34,13 +34,13 @@ vagrant ssh: allows us to go into our VM
 sudo apt-get
 
 
-- config.vm.network "private_network", ip 
+- `config.vm.network "private_network", ip` 
 
-vagrant reload : this commands asks to make updates to the machine without spinning it up.
+`vagrant reload` : this commands asks to make updates to the machine without spinning it up.
 
-vagrant up: once virtual machine is set up we can enter this command to access right away.
+`vagrant up`: once virtual machine is set up we can enter this command to access right away.
 
-
+`vagrant ssh` 
 ##
 
 To use a virtual machine/box:
