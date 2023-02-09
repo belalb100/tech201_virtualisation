@@ -294,12 +294,50 @@ vvvvvvvvvvvvvvvvvvvvvv
 
   we will enter this at the bottom before `end`.
 
+![Alt text](Screenshot%202023-02-09%20140143.png)
+
 We then use vagrant up and then our machine should be running as long as we included
 everything in our provision file. 
 
+then we can `ssh vagrant` and go into our VM and `cd app/app/` to make sure it worked.
+
   this should work now.
 
-tech201_virtualisation\Screenshot 2023-02-09 140143.png
+  type ip address in the web browser 192.168.10.100 
+and the this should appear.
 
+![Alt text](nginx.png)
 
-  
+and it has worked.
+
+<vagrant reload --provision>
+
+Now I have added new pieces of code to the provision.sh as follows
+
+#!/bin/bash
+
+#We need to make sure whatever system runs this knows what command it is doing
+
+# Update and Upgrade
+sudo apt-get update -y #must put dash -y: we need to automate our response as there will be no one to say yes
+sudo apt-get upgrade -y
+# Install nginx
+sudo apt-get install nginx -y
+# Enable or start Nginx
+sudo systemctl enable nginx -y
+
+# download nodejs
+curl -sL https://deb.nodesource.com/setup_6.x | 
+sudo -E bash -sudo apt-get install nodejs -y
+
+sudo npm install pm2 -g
+npm install
+# Entering
+cd /app/app 
+
+#install nodejs
+
+node app.js
+
+After this it should go straight to the sparta webpage as we have completely provisioned all apps that are necessary for this.
+![Alt text](sparta.png)  
