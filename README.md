@@ -50,3 +50,7 @@ We must have virtual machine plaftorm selected and windows hypervisor platform v
 Install Vagrant using the following link: https://developer.hashicorp.com/vagrant/downloads
 PC MUST be installed after.
 
+
+sudo service nginx restart`
+
+  reverse proxy will allow us to go straight to port 3000 by default without typing it.
