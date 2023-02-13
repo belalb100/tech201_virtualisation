@@ -1,27 +1,40 @@
 #!/bin/bash
 
-#We need to make sure whatever system runs this knows what command it is doing
+# update system
+sudo apt-get update -y
 
-# Update and Upgrade
-sudo apt-get update -y #must put dash -y: we need to automate our response as there will be no one to say yes
+# upgrade system
 sudo apt-get upgrade -y
-# Install nginx
-sudo apt-get install nginx -y
-# Enable or start Nginx
-sudo systemctl enable nginx -y
 
-# download nodejs
-curl -sL https://deb.nodesource.com/setup_6.x | 
-sudo -E bash -sudo apt-get install nodejs -y
+# install web-server called Nginx
+sudo apt-get install nginx -y
+
+# restart nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+# Install python
+sudo apt-get install python -y
+sudo apt-get install python-software-properties
+
+# Install node.js - get node setup file using curl
+# curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+# Latest Version, Used when running two VM: app and database
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+# Install node.js
+sudo apt-get install nodejs -y
+
+# Install Process Manager
 
 sudo npm install pm2 -g
-npm install
-# Entering
-cd /app/app 
 
-#install nodejs
+# Navigate to the `app` directory
 
-node app.js
+cd /home/vagrant/app
 
+# Install NPM Dependencies
+sudo npm install
+ 
 
 

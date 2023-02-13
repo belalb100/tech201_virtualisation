@@ -341,3 +341,57 @@ node app.js
 
 After this it should go straight to the sparta webpage as we have completely provisioned all apps that are necessary for this.
 ![Alt text](sparta.png)  
+
+
+
+# Nginx reverse proxy
+
+### What are ports:
+
+Web server ports are the logical endpoints of a network connection that is used to exchange information between a web server and a web client. These ports are assigned a unique number to identify them separately. Port 80 and 443 are the two standard ports used by web servers to communicate with the web clients.
+
+## #'What is a reverse proxy? How is it different to a proxy?
+
+A reverse proxy is a server that sits between client devices and a web server, forwarding client requests to the web server and returning the server's responses back to the clients. It acts as an intermediary for incoming requests from clients seeking resources from a server and it can be used for a number of purposes, such as:
+
+Load balancing: distributing incoming requests across multiple servers to balance the load and ensure high availability of a service.
+
+SSL/TLS offloading: handling SSL/TLS encryption and decryption to relieve the web server of this processing overhead.
+
+Caching: storing frequently-requested resources to speed up the response time and reduce the load on the web server.
+
+Authentication and authorization: enforcing access controls and managing user authentication, often in conjunction with a separate authentication server.
+
+A reverse proxy is different from a forward proxy (also known simply as a proxy), which sits between the client and the internet, forwarding requests from the client to the internet and returning the server's responses back to the client. In this case, the proxy acts on behalf of the client and the server has no knowledge of the proxy's presence.
+
+So, in a reverse proxy, the client has no direct access to the server, while in a forward proxy, the server has no direct access to the client.
+
+![Alt text](proxy%20and%20ports.jpg)
+
+### What is Nginx's default configuration:
+
+The default configuration of Nginx depends on the version and distribution you are using, but typically it includes basic settings to listen on port 80, serve content from the root directory at "/usr/share/nginx/html", and handle error pages. Here is an example of a basic default configuration:
+
+### Vagrant 2
+`Vagrant ssh app` and vagrant `ssh database`
+cd OneDrive/Documents/Devops/tech201_virtualisation/tech201_virtualisation/
+
+`vagrant destroy app` to specify what you would like to destroy.
+`vagrant status`
+
+MongoDB documentation important.
+We need a key for Mongo DB
+
+We update and upgrade on database
+
+Don't use upgrade in a development enviroment. If our app is live and being used and we upgrade it could end up creating downtime. But update will just update internal packages and make sure we are connected to web.
+
+0.0.0.0 : means any ip within any range can access it.
+
+`printenv` : all variables running on the app VM
+`export variable` followed by variable. Allows you to export it.
+`.bashrc` here we can set permenant variables that won't be destroyed when we shutdown the Vagrant Machine. 
+
+### Configuring Ngnix reverse proxy.
+
+Very simple and straigh forward. `vagrant up` from gitbash or VS Studio
