@@ -15,3 +15,4 @@ Vagrant.configure("2") do |config|
     database.vm.synced_folder "environment", "/home/vagrant/environment" 
   end
 end
+
