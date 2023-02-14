@@ -12,7 +12,8 @@ Vagrant.configure("2") do |config|
     database.vm.box = "ubuntu/bionic64"
     database.vm.network "private_network", ip: "192.168.10.150" #Can use anything below 255 for last number
     
-    database.vm.synced_folder "environment", "/home/vagrant/environment" 
+    database.vm.synced_folder "environment", "/home/vagrant/environment"
+    database.vm.provision "shell", path: "db_provision.sh"
   end
 end
 
