@@ -294,7 +294,7 @@ vvvvvvvvvvvvvvvvvvvvvv
 
   we will enter this at the bottom before `end`.
 
-![Alt text](Screenshot%202023-02-09%20140143.png)
+![Alt text](images/Screenshot%202023-02-09%20140143.png)
 
 We then use vagrant up and then our machine should be running as long as we included
 everything in our provision file. 
@@ -306,7 +306,7 @@ then we can `ssh vagrant` and go into our VM and `cd app/app/` to make sure it w
   type ip address in the web browser 192.168.10.100 
 and the this should appear.
 
-![Alt text](nginx.png)
+![Alt text](images/nginx.png)
 
 and it has worked.
 
@@ -340,7 +340,7 @@ cd /app/app
 node app.js
 
 After this it should go straight to the sparta webpage as we have completely provisioned all apps that are necessary for this.
-![Alt text](sparta.png)  
+![Alt text](images/sparta.png)
 
 
 
@@ -366,7 +366,7 @@ A reverse proxy is different from a forward proxy (also known simply as a proxy)
 
 So, in a reverse proxy, the client has no direct access to the server, while in a forward proxy, the server has no direct access to the client.
 
-![Alt text](proxy%20and%20ports.jpg)
+![Alt text](images/proxy%20and%20ports.jpg)
 
 ### What is Nginx's default configuration:
 
